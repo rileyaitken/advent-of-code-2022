@@ -32,7 +32,7 @@ SCISSORS = Choice("Scissors", "C", "Z", 3, "Paper", "X", "Y")
 
 
 def read_file():
-    with open("rps-strategy-guide.txt", "r") as file:
+    with open('rps-strategy-guide.txt', 'r') as file:
         return [line.strip() for line in file.read().split("\n")]
 
 
@@ -69,6 +69,7 @@ def get_player_2_choice_and_score_for_outcome(choice_one: Choice, outcome: str) 
             return choice_one, 3
         case 'Z':
             return get_choice_for_player_2(choice_one.loses_to_char), 6
+        
 
 def rock_paper_scissors_p1(choice_one: str, choice_two: str):
     """
@@ -95,6 +96,7 @@ def rock_paper_scissors_p1(choice_one: str, choice_two: str):
         player_1_round_score += 3
         player_2_round_score += 3
     return [player_1_round_score, player_2_round_score]
+
 
 def rock_paper_scissors_p2(choice_one: str, round_outcome: str):
     """
